@@ -210,7 +210,7 @@ class WeekCalendar extends Component {
         <FlatList
           ref={this.list}
           data={items}
-          extraData={this.props.current || this.props.context.date}
+          extraData={(this.props.current || this.props.context.date) && this.props.markedDates}
           style={this.style.container}
           horizontal
           showsHorizontalScrollIndicator={false}
