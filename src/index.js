@@ -1,4 +1,7 @@
-export {default as Calendar, CalendarHeader} from './calendar';
+export {default as CalendarHeader} from './calendar/header';
+export {default as DayBasic} from './calendar/day/basic';
+
+export {default as Calendar} from './calendar';
 export {default as CalendarList} from './calendar-list';
 export {default as Agenda} from './agenda';
 export {default as ExpandableCalendar} from './expandableCalendar';

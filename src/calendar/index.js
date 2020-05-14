@@ -15,10 +15,6 @@ import CalendarHeader from './header';
 import shouldComponentUpdate from './updater';
 import {SELECT_DATE_SLOT} from '../testIDs';
 
-// Re-exporting the calendars component. This is useful when building calendar
-// components yourself
-export {CalendarHeader};
-
 //Fallback when RN version is < 0.44
 const viewPropTypes = ViewPropTypes || View.propTypes;
 const EmptyArray = [];
@@ -303,6 +299,25 @@ your
         indicator = true;
       }
     }
+
+    console.log('----------------');
+    console.log(this.props.testID);
+    console.log(this.props.headerStyle);
+    console.log(this.props.theme);
+    console.log(this.props.hideArrows);
+    console.log(this.state.currentMonth);
+    console.log(this.addMonth);
+    console.log(indicator);
+    console.log(this.props.firstDay);
+    console.log(this.props.renderArrow);
+    console.log(this.props.monthFormat);
+    console.log(this.props.hideDayNames);
+    console.log(this.props.showWeekNumbers);
+    console.log(this.props.onPressArrowLeft);
+    console.log(this.props.onPressArrowRight);
+    console.log(this.props.webAriaLevel);
+    console.log(this.props.disableArrowLeft);
+    console.log(this.props.disableArrowRight);
 
     return (
       <View 
