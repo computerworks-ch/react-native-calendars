@@ -15,6 +15,9 @@ import CalendarHeader from './header';
 import shouldComponentUpdate from './updater';
 import {SELECT_DATE_SLOT} from '../testIDs';
 
+// Re-exporting the calendars component. This is useful when building calendar
+// components yourself
+export {CalendarHeader};
 
 //Fallback when RN version is < 0.44
 const viewPropTypes = ViewPropTypes || View.propTypes;
@@ -57,10 +60,8 @@ class Calendar extends Component {
     onDayLongPress: PropTypes.func,
     /** Handler which gets executed when month changes in calendar. Default = undefined */
     onMonthChange: PropTypes.func,
-    /** Handler which gets executed when visible month changes in calendar. Default = undefined */
-    onVisibleMonthsChange: PropTypes.func,
-    /** Replace default arrows with custom ones (direction can be 'left' or 'right') */
-    renderArrow: PropTypes.func,
+    /** Handler which gets executed when visibleth
+your
     /** Provide custom day rendering component */
     dayComponent: PropTypes.any,
     /** Month format in calendar title. Formatting values: http://arshaw.com/xdate/#Formatting */
