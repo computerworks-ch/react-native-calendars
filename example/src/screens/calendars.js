@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {StyleSheet, View, ScrollView, Text} from 'react-native';
-import {Calendar} from 'react-native-calendars';
+import {StyleSheet, View, ScrollView, Text, Switch} from 'react-native';
+import Calendar from '../../../src/calendar';
+// import {Calendar} from '../../../src/calendar';
 
 
 export default class CalendarsScreen extends Component {
@@ -8,7 +9,8 @@ export default class CalendarsScreen extends Component {
     super(props);
     
     this.state = {
-      selected: undefined
+      selected: undefined,
+      bgColor: 'white'
     };
   }
 
@@ -16,12 +18,20 @@ export default class CalendarsScreen extends Component {
     this.setState({selected: day.dateString});
   }
 
+  
   render() {
     return (
       <ScrollView showsVerticalScrollIndicator={false}>
+        <Switch
+          value={this.state.bgColor === 'black'}
+          onValueChange={_ => this.setState({bgColor: _ ? 'black' : 'white'})}
+        />
         <Text style={styles.text}>Calendar with selectable date</Text>
         <Calendar
           style={styles.calendar}
+          theme={{
+            calendarBackground: this.state.bgColor
+          }}
           hideExtraDays
           onDayPress={this.onDayPress}
           markedDates={{
